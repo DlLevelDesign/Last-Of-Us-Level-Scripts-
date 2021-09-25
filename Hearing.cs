@@ -12,14 +12,12 @@ public class Hearing : MonoBehaviour
    
     private GameObject player;
 
-
     void Start()
     {
         //find the player character 
         player = GameObject.FindGameObjectWithTag("Player");
     }
 
- 
     void Update()
     {
         //if the player is crouching then highlight every enemy in the list
@@ -48,8 +46,6 @@ public class Hearing : MonoBehaviour
         {
             Enemies.Add(other.gameObject);
         }
-
-
     }
 
     //when an enemy leaves the trigger remove them from the list and turn off their highlight
@@ -62,5 +58,4 @@ public class Hearing : MonoBehaviour
             other.gameObject.GetComponent<Outline>().enabled = false;
         }
     }
-
 }
