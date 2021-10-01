@@ -10,9 +10,16 @@ public class FlickeringLight : MonoBehaviour
     bool isOn = false;
 
     public GameObject flashlight;
-    
+     
     //the countdown timer starts at 125  
-    int countdown = 125;
+    int timer = 125;
+    int countdown;
+    
+    void Start()
+    {
+        //set countdown to 125
+        countdown = timer; 
+    }
 
     //using fixedupdate for consistency 
     void FixedUpdate()
@@ -41,7 +48,8 @@ public class FlickeringLight : MonoBehaviour
         {
             isOn = true;
         }
-
+        
+        // if countdown is less than or equal to 0 turn the light on and restart the timer
         if (countdown <= 0)
         {
             isOn = true;
