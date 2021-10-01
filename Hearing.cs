@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/*this script controls when Highlight.cs is enabled and disabled on enemies*/
 /*this script lets the player see enemy outlines when they are crouched and within a certain range*/
 /*emulates the hearing mechanic from the Last Of US*/
 public class Hearing : MonoBehaviour
