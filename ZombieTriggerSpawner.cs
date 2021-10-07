@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/*spawns an array of zombies when the player enters the trigger 
+/*spawns an array of zombies when the player enters the trigger*/
 public class ZombieTriggerSpawner : MonoBehaviour
 {
     //the array of zombies to be spawned
