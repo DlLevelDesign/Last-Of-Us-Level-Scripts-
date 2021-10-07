@@ -4,9 +4,10 @@ using UnityEngine;
 
 
 /*this script is attached to the baseball bat on the cowboy character (the baseball bat mesh has been replaced with a knife mesh*/
+/*Functionality for the knife gameobject*/
 public class Knife : MonoBehaviour
 {   
-    //boo for if the player has a knife
+    //bool for if the player has a knife
     public bool hasKnife = false;
     public GameObject theKnife;
     GameObject player;
