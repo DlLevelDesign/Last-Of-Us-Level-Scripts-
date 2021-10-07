@@ -2,33 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/*Functionality for what happens to an individual ammo pickup found in the level*/ 
 public class PistolAmmo : MonoBehaviour
 {
-    public int AmmoAmount = 1;
+    //ammount of ammo given to the player when they find the pistol ammo pickup
+    public int = 1;
  
-
     private GameObject player;
     private bool playerIsInTrigger = false;
 
- 
-
-    // Start is called before the first frame update
     void Start()
     {
+        //assign the player variable to the gameobject with the Player tag
         player = GameObject.FindGameObjectWithTag("Player");
-       
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        //print(playerPistol);
+        //if the player enters the trigger activate the presscui
         if(playerIsInTrigger == true)
         {
             player.GetComponent<PressCUi>().isInTrigger = true;
         }
-
+        
+        //if the player enters the trigger and hits the C key then added the loadedAmmo var from the PistolAmmoCounter script to the AmmoAmount var
+        //deactivate presscui
+        //deactivate this object 
         if(playerIsInTrigger == true && Input.GetKeyDown(KeyCode.C))
         {
             player.GetComponent<PistolAmmoCounter>().loadedAmmo += AmmoAmount;
@@ -37,8 +36,7 @@ public class PistolAmmo : MonoBehaviour
         }
     }
 
-    
-
+    //if the player enters the trigger set the playerIsinTrigger to true 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
@@ -47,6 +45,7 @@ public class PistolAmmo : MonoBehaviour
         }
     }
 
+    //if the player exits the trigger set the playerIsinTrigger to false
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
